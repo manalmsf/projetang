@@ -1,0 +1,28 @@
+<div class="calendar-container">
+  <h1>Calendar Scheduler</h1>
+  <div class="calendar-grid">
+    <div class="day-label" *ngFor="let day of ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']">
+      {{ day }}
+    </div>
+
+    <!-- Render days dynamically -->
+    <div
+      class="day-cell"
+      *ngFor="let day of getDaysInMonth(); let i = index"
+      [class.current-day]="isToday(day)"
+      (click)="onDayClick(day)"
+    >
+      <div class="day-number">{{ day.getDate() }}</div>
+      <div
+      class="event"
+      *ngFor="let event of getEventsForDay(day)"
+      (click)="onEventClick(event)"
+      [style.background-color]="'lightblue'"
+    >
+      <strong>{{ event.start | date: 'shortTime' }}</strong> - {{ event.title }}
+    </div>
+    
+
+    </div>
+  </div>
+</div>

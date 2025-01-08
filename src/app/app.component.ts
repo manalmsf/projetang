@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calendarappli';
+  toggleTheme() {
+
+    // Add your theme toggling logic here
+
+    console.log('Theme toggled');
+
+  }
 }
