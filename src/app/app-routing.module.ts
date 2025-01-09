@@ -5,7 +5,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 const routes: Routes = [{ path: '', component: CalendarComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], // `dans l root module pour conffig l router
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
