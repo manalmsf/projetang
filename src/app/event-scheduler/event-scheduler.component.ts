@@ -4,15 +4,15 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 // Define metadata for the EventSchedulerComponent
 @Component({
   selector: 'app-event-scheduler', // Selector for this component
-  templateUrl: './event-scheduler.component.html', // Path to the HTML template
-  styleUrls: ['./event-scheduler.component.css'], // Path to the CSS styles
+  templateUrl: './event-scheduler.component.html', 
+  styleUrls: ['./event-scheduler.component.css'], 
 })
 export class EventSchedulerComponent {
   // Object to hold the event details entered by the user
   event = {
-    title: '', // Event title (initially empty)
-    date: this.data.date, // Pre-selected date passed in through the dialog data
-    time: '', // Event time (initially empty)
+    title: '', 
+    date: this.data.date, 
+    time: '', 
   };
 
   // Constructor to inject dependencies
@@ -24,7 +24,7 @@ export class EventSchedulerComponent {
     // Inject the data passed to the dialog, making it accessible as `data`
   ) {}
 
-  // Method to save the event and close the dialog
+ 
   saveEvent() {
     const eventDateTime = new Date(this.event.date); 
     // Create a new Date object based on the selected date

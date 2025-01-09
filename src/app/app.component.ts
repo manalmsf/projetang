@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'calendarappli';
   toggleTheme() {
 
-    // Add your theme toggling logic here
+    //changement de thème
 
     console.log('Theme toggled');
 

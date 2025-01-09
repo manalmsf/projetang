@@ -16,22 +16,22 @@ export class CalendarComponent {
   // Initial set of events
   events = [
     {
-      start: new Date(), // Start date and time of the event
-      title: 'Sample Event', // Title of the event
+      start: new Date(), 
+      title: 'Sample Event', 
     },
   ];
 
-  // Inject the MatDialog service for opening dialogs
+  // Inject the MatDialog 
   constructor(private dialog: MatDialog) {}
 
   // Method to handle day clicks and open the EventSchedulerComponent
   onDayClick(day: any) {
     const dialogRef = this.dialog.open(EventSchedulerComponent, {
-      width: '400px', // Width of the dialog
+      width: '400px', 
       data: { date: day.date }, // Pass the selected day's date to the dialog
     });
 
-    // After the dialog closes, add the event to the list if a result is returned
+    //result apres ferm
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.events.push(result); // Add the new event to the events array
@@ -42,14 +42,14 @@ export class CalendarComponent {
   // Method to handle event clicks and open the EventDetailsComponent
   onEventClick(event: any) {
     this.dialog.open(EventDetailsComponent, {
-      width: '400px', // Width of the dialog
+      width: '400px', 
       data: event, // Pass the selected event data to the dialog
     });
   }
 
   // Generate all days in the current month
   getDaysInMonth(): Date[] {
-    const days: Date[] = []; // Array to store all days in the month
+    const days: Date[] = []; 
     const date = new Date(this.viewDate.getFullYear(), this.viewDate.getMonth(), 1); // Start at the first day of the month
 
     // Loop through all days in the month
@@ -58,16 +58,16 @@ export class CalendarComponent {
       date.setDate(date.getDate() + 1); // Move to the next day
     }
 
-    return days; // Return the array of dates
+    return days; 
   }
 
   // Check if a given date is today
   isToday(date: Date): boolean {
     const today = new Date(); // Get today's date
     return (
-      date.getDate() === today.getDate() && // Compare day
-      date.getMonth() === today.getMonth() && // Compare month
-      date.getFullYear() === today.getFullYear() // Compare year
+      date.getDate() === today.getDate() && 
+      date.getMonth() === today.getMonth() && 
+      date.getFullYear() === today.getFullYear() 
     );
   }
 
@@ -75,7 +75,7 @@ export class CalendarComponent {
   getEventsForDay(date: Date): any[] {
     return this.events.filter(
       (event) =>
-        new Date(event.start).toDateString() === date.toDateString() // Compare event start date with the given date
+        new Date(event.start).toDateString() === date.toDateString() 
     );
   }
 }
